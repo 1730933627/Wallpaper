@@ -94,4 +94,4 @@
 
 ## License
 
-[Yan_Lin](https://github.com/1730933627/Wallpaper/README.md)
+[Yan_Lin](https://github.com/1730933627/Wallpaper/blob/master/readme.md)
