@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极简壁纸</title>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/wallpaper.css">
+    <script src="./js/lib/jquery.js"></script>
+    <script src="./js/lib/axios.min.js"></script>
+    <script src="./js/lib/vue.js"></script>
+    <link rel="stylesheet" href="./css/fakeLoader.css">
+    <link rel="stylesheet" href="./css/scrollbar.css">
+    <script src="./js/lib/fakeLoader.js"></script>
+    <script src="./js/config.js"></script>
+</head>
+<body>
+    <div class="fakeLoader" id="fakeLoader"></div>
+    <script src="js/run_fakeLoader.js" id="fakeLoader_js"></script>
+    <header>
+        <div>
+            <div class="left">
+                <div class="title">极简壁纸</div>
+                <div class="v-toolbar__content">Minimalist Wallpaper</div>
+                <ul class="menu">
+                    <a href="index.html" class="onclick">
+                        <li><img class="icon" src="./images/logo/首页.png">首页</li>
+                    </a>
+                    <a href="./page/love.html">
+                        <li><img class="icon" src="./images/logo/喜爱.png">喜欢</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="right">
+                <ul class="menu">
+                    <a href="./page/mine.html">
+                        <li><img class="icon" src="./images/logo/我的.png">我的</li>
+                    </a>
+                    <a href="./page/setting.html">
+                        <li><img class="icon" src="./images/logo/设置.png">设置</li>
+                    </a>
+                    <a href="./page/about.html">
+                        <li><img class="icon" src="./images/logo/关于.png">关于</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="wallpaper" class="wallpaper">
+        <transition name="popUp">
+            <div class="popUp" v-if="popUp" @click="popUp = false">请登陆</div>
+        </transition>
+        <div class="sort">
+            <div class="item">
+                <span>排序</span>
+                <select name="sort" id="sort" v-model="sort">
+                    <option value="推荐" selected>推荐</option>
+                    <option value="最新">最新</option>
+                    <option value="最老">最老</option>
+                    <option value="最热">最热</option>
+                </select>
+            </div>
+            <div class="item">
+                <span>分类</span>
+                <select name="sort" id="category" v-model="category">
+                    <option value="不限" selected>不限</option>
+                    <option value="二次元">二次元</option>
+                    <option value="人物">人物</option>
+                    <option value="风景">风景</option>
+                    <option value="游戏">游戏</option>
+                </select>
+            </div>
+            <div class="item">
+                <span>尺寸</span>
+                <select name="sort" id="size" v-model="size">
+                    <option value="不限" selected>不限</option>
+                    <option value="1080P">1080P</option>
+                    <option value="2K">2K</option>
+                    <option value="4K">4K</option>
+                    <option value="8K">8K</option>
+                </select>
+            </div>
+        </div>
+        <div class="content">
+            <div class="item" v-for="v of paginatedData" :key="v.id" :id="v.id">
+                <span class="pixel">{{v.pixel}}</span>
+                <span class="save">保存</span>
+                <img :src="v.url">
+                <div class="xin" @click="xinClick"></div>
+            </div>
+            <div class="footer" v-if="mount">
+                <div class="forward" @click="prevPage"></div>
+                <ul class="page">
+                    <li v-for="index in pageCount" @click="pageGoto" :key="index">{{index}}</li>
+                </ul>
+                <div class="back" @click="nextPage"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/app/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+var hostAddress = '127.0.0.1';
+var username = 'account';
+var password = 'password';
+var port = '3306';
+var database = 'wallpaper';
+exports.gethostAddress = function() { return hostAddress; }
+exports.getusername = function() { return username; }
+exports.getpassword = function() { return password; }
+exports.getport = function() { return port; }
+exports.getdatabase = function() { return database; }

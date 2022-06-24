@@ -1,0 +1,34 @@
+.content{
+    width: 60%;
+    padding: 20px 50px 100px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px #aaa;
+    margin: 150px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content>h1{
+    text-align: center;
+    font-size: 100px;
+    margin: 50px auto 100px;
+    cursor: default;
+    user-select: none;
+}
+.content>p{
+    text-indent: 2em;
+    font-size: 18px;
+    line-height: 200%;
+    color: #777;
+    cursor: default;
+    user-select: none;
+    margin: 0 100px;
+    margin-bottom: 150px;
+}
+/* .content>img{
+    margin: 50px auto 100px;
+    user-select: none;
+    pointer-events:none;
+} */

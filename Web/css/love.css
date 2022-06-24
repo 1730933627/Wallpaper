@@ -1,0 +1,53 @@
+
+.wallpaper{
+    display: flex;
+    justify-content: center;
+}
+.wallpaper>.content{
+    padding-top: 70px;
+    width: 90%;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.wallpaper>.content>.item{
+    width: 410px;
+    height: 280px;
+    border-radius: 3%;
+    margin: 5px;
+    position: relative;
+}
+.wallpaper>.content>.item>img{
+    object-fit: cover;
+    cursor: pointer;
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 3%;
+    transition: all 0.15s ease-in-out;
+}
+.wallpaper>.content>.item>img:hover{
+    box-shadow: 0 0 10px #333;
+}
+.wallpaper>.content>.item>.xin{
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 250px;
+    right: 5px;
+    background-image: url(../images/logo/xin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.wallpaper>.notLogin{
+    margin: 100px 0 0;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: default;
+    user-select: none;
+}
